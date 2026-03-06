@@ -1,0 +1,313 @@
+/* AI Dark Neon Theme Override - Enhanced for the 2026 Modern Era */
+:root {
+    --bg-color: #090510; /* Slightly more purple-tinted deep background */
+    --panel-bg: rgba(25, 20, 45, 0.7); /* Deep dark violet panel */
+    --panel-border: rgba(45, 30, 59, 0.5);
+    --text-main: #f8fafc;
+    --text-alt: #b4a3c8;
+    
+    --blue-color: #aa00ff; /* Bright Neon Purple */
+    --blue-alt-color: #8800ff;
+    --orange-color: #f500ff; /* Hot Magenta/Pink-Purple */
+    --green-color: #6a00ff; /* Deep Violet */
+    --red-color: #ff0055;
+    --grey-color: #475569;
+
+    --glow-purple: 0 0 10px rgba(170, 0, 255, 0.5), 0 0 20px rgba(170, 0, 255, 0.3);
+    --glow-magenta: 0 0 10px rgba(245, 0, 255, 0.5), 0 0 20px rgba(245, 0, 255, 0.3);
+}
+
+body, .bg-eee {
+    background-color: var(--bg-color) !important;
+    color: var(--text-main) !important;
+    background-image: radial-gradient(circle at 50% 0%, rgba(170, 0, 255, 0.07), transparent 40%),
+                      radial-gradient(circle at 100% 100%, rgba(245, 0, 255, 0.07), transparent 40%) !important;
+    background-attachment: fixed !important;
+}
+
+.bg-white {
+    background-color: var(--panel-bg) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid var(--panel-border) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
+}
+
+.bg-white:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(170, 0, 255, 0.1) !important;
+    border-color: rgba(170, 0, 255, 0.2) !important;
+}
+
+.c-black {
+    color: var(--text-main) !important;
+}
+
+.c-grey {
+    color: var(--text-alt) !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-main) !important;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+.sidebar {
+    background-color: rgba(15, 10, 25, 0.8) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-right: 1px solid var(--panel-border) !important;
+    box-shadow: 4px 0 20px rgba(0,0,0,0.5) !important;
+    z-index: 100;
+}
+
+.sidebar h3::after {
+    background-color: var(--blue-color) !important;
+    height: 2px !important;
+    box-shadow: var(--glow-purple);
+}
+
+.sidebar h3::before {
+    border-color: var(--panel-bg) !important;
+    background-color: var(--blue-color) !important;
+    box-shadow: var(--glow-purple);
+}
+
+.sidebar ul li a {
+    color: var(--text-main) !important;
+    transition: all 0.3s ease !important;
+    border-radius: 8px !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.sidebar ul li a::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 0%; height: 100%;
+    background: linear-gradient(90deg, rgba(170, 0, 255, 0.2), transparent);
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.sidebar ul li a.active::before,
+.sidebar ul li a:hover::before {
+    width: 100%;
+}
+
+.sidebar ul li a.active,
+.sidebar ul li a:hover {
+    color: var(--blue-color) !important;
+    text-shadow: 0 0 8px rgba(170, 0, 255, 0.6);
+    background-color: transparent !important;
+}
+
+.content .head {
+    background-color: rgba(15, 10, 25, 0.8) !important;
+    backdrop-filter: blur(15px) !important;
+    border-bottom: 1px solid var(--panel-border) !important;
+}
+
+.content .head .search input {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    color: var(--text-main) !important;
+    border: 1px solid var(--panel-border) !important;
+    border-radius: 20px;
+    padding-left: 35px;
+    transition: all 0.3s ease;
+}
+
+.content .head .search input:focus {
+    border-color: var(--blue-color) !important;
+    box-shadow: var(--glow-purple) !important;
+    background-color: rgba(170, 0, 255, 0.05) !important;
+}
+
+.page .content h1::after {
+    background-color: var(--blue-color) !important;
+    box-shadow: var(--glow-purple);
+}
+.page .content h1::before {
+    background-color: var(--text-alt) !important;
+}
+
+/* Welcome Area */
+.welcome {
+    background: rgba(25, 20, 45, 0.7) !important;
+}
+.welcome .intro {
+    background: linear-gradient(135deg, rgba(170, 0, 255, 0.2), rgba(245, 0, 255, 0.1)) !important;
+    border-bottom: 1px solid rgba(255,255,255,0.05) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.welcome img.avatar-img {
+    border-color: var(--bg-color) !important;
+    box-shadow: var(--glow-purple) !important;
+    transition: transform 0.5s ease;
+}
+
+.welcome:hover img.avatar-img {
+    transform: translateY(-50%) rotate(5deg) scale(1.1);
+}
+
+.welcome .body .info {
+    border-top-color: var(--panel-border) !important;
+    border-bottom-color: var(--panel-border) !important;
+}
+
+/* Buttons */
+.btn-shape {
+    transition: all 0.3s ease !important;
+}
+
+.btn-shape:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(170, 0, 255, 0.3);
+}
+
+/* Quick Draft */
+.quick-draft textarea,
+.quick-draft input {
+    background-color: rgba(0,0,0,0.2) !important;
+    color: var(--text-main) !important;
+    border: 1px solid var(--panel-border) !important;
+    transition: all 0.3s ease;
+}
+.quick-draft textarea:focus,
+.quick-draft input:focus {
+    border-color: var(--blue-color) !important;
+    box-shadow: 0 0 10px rgba(170, 0, 255, 0.2) !important;
+}
+
+/* Overrides for background colors with Glow */
+.bg-blue { background-color: var(--blue-color) !important; color: #fff !important; font-weight: bold; box-shadow: var(--glow-purple); }
+.bg-orange { background-color: var(--orange-color) !important; color: #fff !important; box-shadow: var(--glow-magenta); }
+.bg-green { background-color: var(--green-color) !important; color: #fff !important; font-weight: bold; box-shadow: 0 0 10px rgba(106, 0, 255, 0.5); }
+.bg-red { background-color: var(--red-color) !important; color: #fff !important; box-shadow: 0 0 10px rgba(255, 0, 85, 0.5); }
+
+.c-blue { color: var(--blue-color) !important; text-shadow: var(--glow-purple); }
+.c-orange { color: var(--orange-color) !important; text-shadow: var(--glow-magenta); }
+.c-green { color: var(--green-color) !important; text-shadow: 0 0 10px rgba(106, 0, 255, 0.5); }
+.c-red { color: var(--red-color) !important; text-shadow: 0 0 10px rgba(255, 0, 85, 0.5); }
+
+/* Progress bars */
+.progress span {
+    border-radius: 6px;
+    box-shadow: var(--glow-purple);
+}
+
+.yearly-targets .target-row.blue .icon { background-color: rgba(170, 0, 255, 0.2) !important; }
+.yearly-targets .target-row.orange .icon { background-color: rgba(245, 0, 255, 0.2) !important; }
+.yearly-targets .target-row.green .icon { background-color: rgba(106, 0, 255, 0.2) !important; }
+
+.yearly-targets .target-row.blue .progress { background-color: rgba(170, 0, 255, 0.2) !important; }
+.yearly-targets .target-row.orange .progress { background-color: rgba(245, 0, 255, 0.2) !important; }
+.yearly-targets .target-row.green .progress { background-color: rgba(106, 0, 255, 0.2) !important; }
+
+/* Tickets */
+.tickets .stats .box {
+    border: 1px solid var(--panel-border) !important;
+    background-color: rgba(0,0,0,0.2) !important;
+    transition: all 0.3s ease;
+}
+.tickets .stats .box:hover {
+    border-color: var(--blue-color) !important;
+    box-shadow: inset 0 0 15px rgba(170, 0, 255, 0.1) !important;
+    transform: translateY(-3px);
+}
+
+/* Lists and Rows borders */
+.latest-news .news-row:not(:last-of-type),
+.tasks .task-row:not(:last-of-type),
+.latest-uploads ul li:not(:last-of-type),
+.sec-info > div:not(:last-of-type),
+.projects table td,
+.reminders ul li {
+    border-bottom: 1px solid var(--panel-border) !important;
+}
+
+.projects table td {
+    border-left-color: var(--panel-border) !important;
+}
+.projects table tr td:last-of-type {
+    border-right-color: var(--panel-border) !important;
+}
+
+.btn-shape.bg-eee {
+    background-color: rgba(0,0,0,0.3) !important;
+    color: var(--text-main) !important;
+    border: 1px solid var(--panel-border) !important;
+}
+
+/* Form element enhancements */
+.toggle-switch {
+    background-color: rgba(255,255,255,0.1) !important;
+    border: 1px solid var(--panel-border);
+}
+.toggle-switch::before {
+    background-color: var(--text-alt) !important;
+    color: var(--panel-bg) !important;
+}
+.toggle-checkbox:checked + .toggle-switch {
+    background-color: var(--blue-color) !important;
+    box-shadow: var(--glow-purple) !important;
+}
+.toggle-checkbox:checked + .toggle-switch::before {
+    color: var(--blue-color) !important;
+}
+
+/* Table styling */
+.responsive-table {
+    overflow-x: auto;
+}
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+table thead td {
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    border-bottom: 2px solid var(--blue-color) !important;
+    color: var(--blue-color) !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+table tbody tr {
+    transition: all 0.3s ease;
+}
+table tbody tr:hover {
+    background-color: rgba(170, 0, 255, 0.08) !important;
+    transform: scale(1.01);
+}
+
+/* Custom Scrollbar for modern look */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--panel-border);
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--blue-color);
+}
+
+/* Icons Animation */
+.fa-solid, .fa-regular, .fa-brands {
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+.box:hover .fa-solid,
+.box:hover .fa-brands {
+    transform: scale(1.2) rotate(5deg);
+}
+
+/* Top search items override */
+.top-search .item {
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--panel-border);
+}
